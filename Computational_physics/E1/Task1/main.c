@@ -1,15 +1,18 @@
-/* 	
+/*
 	Program for use on discrete Fourier transforms in E1 of Computaional Physics.
 	Created by Martin Gren on 2015-10-13.
 */
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <gsl/gsl_fft_real.h>
+#include <gsl/gsl_fft_halfcomplex.h>
 #define PI 3.141592653589
 #define n 250 /*number of timesteps*/
 
 int main ()
 {
+	printf("%s\n", "asd");
 	/* timestep dt */
 	double dt = 0.1;
 
@@ -17,9 +20,9 @@ int main ()
 	int i;
 	double data[n];
 	double f = 2;
-	
+
 	/* declare file variables */
-	FILE *file1;	
+	FILE *file1;
 
 	/* calculate data points */
 	for (i = 0; i < n; i++) {
