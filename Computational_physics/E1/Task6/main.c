@@ -76,8 +76,8 @@ int main()
 		for (j = 0; j < nbr_of_particles; j++) {
 		    q[j] += timestep * v[j];
 		}
-		potential_energy[i] = calc_pe(q, kappa, nbr_of_particles)
-		kinetic_energy[i] = calc_ke(v, nbr_of_particles,m)
+		potential_energy[i] = calc_pe(q, kappa, nbr_of_particles);
+		kinetic_energy[i] = calc_ke(v, nbr_of_particles, m);
 		/* a(t+dt) */
 		calc_acc(a, q, m, kappa, nbr_of_particles);
 
