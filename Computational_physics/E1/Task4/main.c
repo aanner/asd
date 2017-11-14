@@ -1,4 +1,4 @@
-/* 	Program for use on part two on discrete Fourier transforms in E1 
+/* 	Program for use on part two on discrete Fourier transforms in E1
 	Created by Martin Gren on 2014-10-21
 */
 #include <stdio.h>
@@ -18,15 +18,18 @@ int main ()
 	double data[n];
 	double freq[n];
 	double powspec_data[n];
-	double f = 2;
+	double f1 = 2;
+	double f2 = 6;
+	int a1 = 1;
+	int a2 = 1;
 
 	/* declare file variables */
 	FILE *file1;
-	FILE *file2;	
+	FILE *file2;
 
 	/* calculate data points */
 	for (i = 0; i < n; i++)	{
-		data[i] = cos(2*PI*f*dt*i);
+		data[i] = a1*cos(2*PI*f1*dt*i) + a2*cos(2*PI*f2*dt*i);
 	}
 
 	/*Save function values in file*/
@@ -46,8 +49,7 @@ int main ()
 	for (i = 0; i < n; i++)	{
 		fprintf (file2,"%e \t %e\n", freq[i], powspec_data[i]);
 	}
-	
+
 	fclose(file2);
 	return 0;
 }
-
