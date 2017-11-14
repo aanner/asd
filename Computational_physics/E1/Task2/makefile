@@ -2,7 +2,7 @@
 # Constants
 #
 CC = gcc # c-compiler
-CFLAGS = -O3 -W -L/home/albin/gsl/lib -I/home/albin/gsl/include # -O3 gives optimization, -W gives warnings
+CFLAGS = -L/home/albin/gsl/lib -I/home/albin/gsl/include -O3 -W # -O3 gives optimization, -W gives warnings
 LIBS = -lm -lgsl -lgslcblas # libraries
 
 OBJECTS = fft_func.o main.o # object files to produce

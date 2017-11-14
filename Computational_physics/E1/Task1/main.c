@@ -5,8 +5,6 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#include <gsl/gsl_fft_real.h>
-#include <gsl/gsl_fft_halfcomplex.h>
 #define PI 3.141592653589
 #define n 250 /*number of timesteps*/
 
