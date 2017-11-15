@@ -1,6 +1,6 @@
 /*
 E1_main.c
- 
+
 Created by AL on 2013-10-24.
 Further developed by Martin Gren on 2014-10-20.
 */
@@ -29,7 +29,7 @@ int main()
 	/* displacement, velocity and acceleration */
 	double q[nbr_of_particles];
 	double v[nbr_of_particles];
-	double a[nbr_of_particles]; 
+	double a[nbr_of_particles];
 
 
 	/* Allocating memory for large vectors */
@@ -45,7 +45,7 @@ int main()
 	timestep_sq = timestep * timestep;
 
 
-	
+
 	/* Initial conditions */
 	/* Set initial displacements and velocites */
 	q[0] = 0.1;
@@ -67,7 +67,7 @@ int main()
 		/* v(t+dt/2) */
 		for (j = 0; j < nbr_of_particles; j++) {
 		    v[j] += timestep * 0.5 * a[j];
-		} 
+		}
 
 		/* q(t+dt) */
 		for (j = 0; j < nbr_of_particles; j++) {
@@ -80,7 +80,7 @@ int main()
 		/* v(t+dt) */
 		for (j = 0; j < nbr_of_particles; j++) {
 		    v[j] += timestep * 0.5 * a[j];
-		} 
+		}
 
 		/* Save the displacement of the three atoms */
 		q_1[i] = q[0];
@@ -93,14 +93,14 @@ int main()
 
 	for (i = 0; i < nbr_of_timesteps + 1; i++) {
 		current_time = i * timestep;
-		fprintf(file, "%.4f \t %e \t %e \t %e", current_time, q_1[i], q_2[i], q_3[i] );	
+		fprintf(file, "%.4f \t %e \t %e \t %e", current_time, q_1[i], q_2[i], q_3[i] );
 		fprintf(file, "\n");
 	}
 	fclose(file);
 
-	/* Free allocated memory */ 
+	/* Free allocated memory */
 	free(q_1); q_1 = NULL;
 	free(q_2); q_2 = NULL;
 	free(q_3); q_3 = NULL;
-	return 0;    
+	return 0;
 }
